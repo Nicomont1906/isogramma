@@ -2,7 +2,7 @@
 
 ***Determina se una parola o una frase è un isogramma.
  un isogramma è una parola o una frase che non ha lettere ripetute.
-Sono ammessi spazi e segni di punteggiatura ripetuti.
+Sono ammessi spazi e segni di punteggiatura ripetuti.***
 
 Esempi di isogrammi:
 
