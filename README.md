@@ -1,8 +1,7 @@
-# Isogramma
+# Isogramma 
 
-Determina se una parola o una frase è un isogramma.
-
-Per come lo intendiamo in questo esercizio, un isogramma è una parola o una frase che non ha lettere ripetute.
+***Determina se una parola o una frase è un isogramma.
+ un isogramma è una parola o una frase che non ha lettere ripetute.
 Sono ammessi spazi e segni di punteggiatura ripetuti.
 
 Esempi di isogrammi:
@@ -12,18 +11,36 @@ Esempi di isogrammi:
 - downstream
 - six-year-old
 
-Gli isogrammi possono essere utili come chiavi di cifratura dato che la corrispondenza fra lettere è univoca. 
+```
+using System;
+using System.Linq;
 
-Isogrammi di 10 lettere, per esempio PATHFINDER, DUMBWAITER o BLACKHORSE, possono essere utilizzate da venditori di beni il cui prezzo può essere negoziato, come macchine usate, gioielli e antichità.
+public static class Isogramma
+{
+    public static bool Verifica(string word)
+    {
+     var Alphabet = new int [26];
+        foreach(var Letter in word.ToLower())
+        {
+            if (Char.IsLetter(Letter))
+            {
+                Alphabet [Letter - 'a']++;
+                if (Alphabet[Letter - 'a'] > 1)
+                    return false;
+            }
+        }
+        return true;
+    }
 
-Per esempio le cifre decimali possono essere mappate secondo questo schema:
+}
+```
 
-P	A	T	H	F	I	N	D	E	R
+***Il codice in questione definisce una classe  chiamata "Isogramma", che contiene un metodo "Verifica".
+Il metodo Verifica riceve una stringa come parametro e restituisce un valore booleano che indica se la stringa rappresenta un isogramma (true) o meno (false).
+Viene creato un array di interi chiamato "Alphabet" di lunghezza 26. Questo array verrà utilizzato per memorizzare quante volte ogni lettera dell'alfabeto appare nella stringa.
+Viene eseguito un controllo attraverso ogni carattere della stringa convertendo ogni carattere in lettera minuscola utilizzando il metodo ToLower().
+Per ogni lettera, viene verificato se il carattere è una lettera dell'alfabeto utilizzando il metodo IsLetter()
+Se la lettera corrente è una lettera dell'alfabeto, viene aggiornato l'array "Alphabet" incrementando il valore corrispondente all'indice dell'array associato alla lettera corrente.
+Se il valore corrispondente all'indice dell'array associato alla lettera corrente è maggiore di 1, significa che la lettera è già apparsa nella stringa e quindi la stringa non può essere un isogramma. In questo caso, viene restituito il valore booleano false.
+Se l'intero controllo  completa senza restituire false, la stringa è un isogramma e viene restituito il valore booleano true.***
 
-1	2	3	4	5	6	7	8	9	0
-
-Ammettiamo che il prezzo indicato fosse 1200 € ma nel cartellino ci fossero anche le lettere FRR, il venditore saprebbe che il prezzo originale era 500 € in modo da non scendere sotto quella soglia.
-
-Un isogramma di 12 lettere si può usare per mappare i mesi dell'anno.
-
-[Wikipedia sugli Isogrammi](https://it.wikipedia.org/wiki/Isogramma)
