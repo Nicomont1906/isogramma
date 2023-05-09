@@ -42,5 +42,5 @@ Viene eseguito un controllo attraverso ogni carattere della stringa convertendo 
 Per ogni lettera, viene verificato se il carattere è una lettera dell'alfabeto utilizzando il metodo IsLetter()
 Se la lettera corrente è una lettera dell'alfabeto, viene aggiornato l'array "Alphabet" incrementando il valore corrispondente all'indice dell'array associato alla lettera corrente.
 Se il valore corrispondente all'indice dell'array associato alla lettera corrente è maggiore di 1, significa che la lettera è già apparsa nella stringa e quindi la stringa non può essere un isogramma. In questo caso, viene restituito il valore booleano false.
-Se l'intero controllo  completa senza restituire false, la stringa è un isogramma e viene restituito il valore booleano true.
+Se l'intero controllo  completa senza restituire false, la stringa è un isogramma e viene restituito il valore booleano true.***
 
